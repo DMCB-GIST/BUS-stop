@@ -1,4 +1,5 @@
 # BUS-stop
-ACL 2022
+Accepted in ACL 2022 main conference 
 
-Not now
+Current code is designed for detailed analysis.
+We will upload easy version after publication.
