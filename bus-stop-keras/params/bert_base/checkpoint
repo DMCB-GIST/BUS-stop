@@ -1,0 +1,3 @@
+model_checkpoint_path: "D:\\Python_data\\WinPython-64bit-3.6.3.0Qt5\\scripts\\NoDev\\..\\bert_code\\bert\\uncased_L-12_H-768_A-12/pe.bert_model.ckpt"
+all_model_checkpoint_paths: "D:\\Python_data\\WinPython-64bit-3.6.3.0Qt5\\scripts\\NoDev\\..\\bert_code\\bert\\uncased_L-12_H-768_A-12/plus_entity_bert_model"
+all_model_checkpoint_paths: "D:\\Python_data\\WinPython-64bit-3.6.3.0Qt5\\scripts\\NoDev\\..\\bert_code\\bert\\uncased_L-12_H-768_A-12/pe.bert_model.ckpt"

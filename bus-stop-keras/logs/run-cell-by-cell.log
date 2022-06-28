@@ -1,0 +1,107 @@
+21:20:06:BUS-stop:INFO: ***Logging start***
+21:20:06:BUS-stop:INFO: os.environ['CUDA_VISIBLE_DEVICES'] = 0
+21:20:06:BUS-stop:INFO: devices = ['/device:GPU:0']
+21:20:06:BUS-stop:INFO: Number of devices: 1
+21:20:17:BUS-stop:INFO: *******************
+21:20:17:BUS-stop:INFO: ***Preprocessing***
+21:20:17:BUS-stop:INFO: *******************
+21:20:17:BUS-stop:INFO: In file ./data/SST-2/labeled.tsv, we read 100 samples, 
+21:20:17:BUS-stop:INFO: where the class distribution is {'0': 50, '1': 50, None: 0}.
+21:20:17:BUS-stop:INFO: In file ./data/SST-2/test_with_gold.tsv, we read 1821 samples, 
+21:20:17:BUS-stop:INFO: where the class distribution is {'0': 912, '1': 909, None: 0}.
+21:20:17:BUS-stop:INFO: In file ./data/SST-2/unlabeled.tsv, we read 1821 samples, 
+21:20:17:BUS-stop:INFO: where the class distribution is {'0': 0, '1': 0, None: 1821}.
+21:20:18:BUS-stop:INFO: Labeled//Test//Unlabeled matrix shape = (100, 64) // (1821, 64) // (1821, 64)
+21:20:18:BUS-stop:INFO: ***Train***
+21:20:18:BUS-stop:INFO: Example 0
+21:20:18:BUS-stop:INFO: Label 0
+21:20:18:BUS-stop:INFO: Token ids [  101  2062  1997  1996  2168  2214 13044  5365  2038  2042  2667  2000
+  3413  2125  2004 11701  9458  4024  2005  2070  2051  2085  1012   102
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0]
+21:20:18:BUS-stop:INFO: Tokens ['[CLS]', 'more', 'of', 'the', 'same', 'old', 'garbage', 'hollywood', 'has', 'been', 'trying', 'to', 'pass', 'off', 'as', 'acceptable', 'teen', 'entertainment', 'for', 'some', 'time', 'now', '.', '[SEP]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]']
+21:20:18:BUS-stop:INFO: Token mask [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+21:20:18:BUS-stop:INFO: ***Train***
+21:20:18:BUS-stop:INFO: Example 1
+21:20:18:BUS-stop:INFO: Label 0
+21:20:18:BUS-stop:INFO: Token ids [ 101 2023 2047 3414 2746 1011 1997 1011 2287 3185 2003 1050 1005 1056
+ 2428 2055 2505 1012  102    0    0    0    0    0    0    0    0    0
+    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+    0    0    0    0    0    0    0    0]
+21:20:18:BUS-stop:INFO: Tokens ['[CLS]', 'this', 'new', 'zealand', 'coming', '-', 'of', '-', 'age', 'movie', 'is', 'n', "'", 't', 'really', 'about', 'anything', '.', '[SEP]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]']
+21:20:18:BUS-stop:INFO: Token mask [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+21:20:18:BUS-stop:INFO: ***Test***
+21:20:18:BUS-stop:INFO: Example 0
+21:20:18:BUS-stop:INFO: Label 0
+21:20:18:BUS-stop:INFO: Token ids [  101 15491 28616 22444  4095  1997  6782  1998 11541  1012   102     0
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0]
+21:20:18:BUS-stop:INFO: Tokens ['[CLS]', 'uneasy', 'mis', '##hma', '##sh', 'of', 'styles', 'and', 'genres', '.', '[SEP]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]']
+21:20:18:BUS-stop:INFO: Token mask [1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+21:20:18:BUS-stop:INFO: ***Test***
+21:20:18:BUS-stop:INFO: Example 1
+21:20:18:BUS-stop:INFO: Label 0
+21:20:18:BUS-stop:INFO: Token ids [  101  2023  2143  1005  1055  3276  2000  5025  6980  2003  1996  2168
+  2004  2054  4234  1011  3392 19311  2075  1999  1037 12509  2064  2003
+  2000  5025  4586  1024  1037  3532  1011  1011  2065 25634  1011  1011
+ 20017  1012   102     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0]
+21:20:18:BUS-stop:INFO: Tokens ['[CLS]', 'this', 'film', "'", 's', 'relationship', 'to', 'actual', 'tension', 'is', 'the', 'same', 'as', 'what', 'christmas', '-', 'tree', 'flock', '##ing', 'in', 'a', 'spray', 'can', 'is', 'to', 'actual', 'snow', ':', 'a', 'poor', '-', '-', 'if', 'durable', '-', '-', 'imitation', '.', '[SEP]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]']
+21:20:18:BUS-stop:INFO: Token mask [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+21:20:18:BUS-stop:INFO: ***Unlabeled***
+21:20:18:BUS-stop:INFO: Example 0
+21:20:18:BUS-stop:INFO: Token ids [  101 15491 28616 22444  4095  1997  6782  1998 11541  1012   102     0
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0]
+21:20:18:BUS-stop:INFO: Tokens ['[CLS]', 'uneasy', 'mis', '##hma', '##sh', 'of', 'styles', 'and', 'genres', '.', '[SEP]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]']
+21:20:18:BUS-stop:INFO: Token mask [1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+21:20:18:BUS-stop:INFO: ***Unlabeled***
+21:20:18:BUS-stop:INFO: Example 1
+21:20:18:BUS-stop:INFO: Token ids [  101  2023  2143  1005  1055  3276  2000  5025  6980  2003  1996  2168
+  2004  2054  4234  1011  3392 19311  2075  1999  1037 12509  2064  2003
+  2000  5025  4586  1024  1037  3532  1011  1011  2065 25634  1011  1011
+ 20017  1012   102     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0]
+21:20:18:BUS-stop:INFO: Tokens ['[CLS]', 'this', 'film', "'", 's', 'relationship', 'to', 'actual', 'tension', 'is', 'the', 'same', 'as', 'what', 'christmas', '-', 'tree', 'flock', '##ing', 'in', 'a', 'spray', 'can', 'is', 'to', 'actual', 'snow', ':', 'a', 'poor', '-', '-', 'if', 'durable', '-', '-', 'imitation', '.', '[SEP]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]', '[PAD]']
+21:20:18:BUS-stop:INFO: Token mask [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+21:21:02:BUS-stop:INFO: ***********************
+21:21:02:BUS-stop:INFO: ***Preliminary stage***
+21:21:02:BUS-stop:INFO: ***********************
+21:22:34:BUS-stop:INFO: In 0-th run, [best_val_acc,best_val_loss] = [0.88,0.3883].
+21:24:05:BUS-stop:INFO: In 1-th run, [best_val_acc,best_val_loss] = [0.78,0.5071].
+21:25:34:BUS-stop:INFO: In 2-th run, [best_val_acc,best_val_loss] = [0.78,0.5064].
+21:25:34:BUS-stop:INFO: p_l_conf = [0.5015, 0.5775, 0.5909, ..., 0.9541, 0.9595, 0.9631]
+21:25:34:BUS-stop:INFO: class distribution of unlabeled data: pred [0.4921 0.5079] -> cali [0.4965 0.5035]
+21:39:00:BUS-stop:INFO: ****************
+21:39:00:BUS-stop:INFO: ***Main stage***
+21:39:00:BUS-stop:INFO: ****************
+21:39:22:BUS-stop:INFO: Epoch 1, s_conf=2.8318, s_class=0.9999, tst_acc=0.6848, tst_loss=0.6543
+21:39:31:BUS-stop:INFO: Epoch 2, s_conf=2.4574, s_class=0.9985, tst_acc=0.7611, tst_loss=0.6013
+21:39:40:BUS-stop:INFO: Epoch 3, s_conf=1.8869, s_class=0.9979, tst_acc=0.8018, tst_loss=0.5014
+21:39:50:BUS-stop:INFO: Epoch 4, s_conf=1.6072, s_class=0.9852, tst_acc=0.8051, tst_loss=0.4458
+21:39:59:BUS-stop:INFO: Epoch 5, s_conf=1.6482, s_class=0.9952, tst_acc=0.8386, tst_loss=0.3837
+21:40:08:BUS-stop:INFO: Epoch 6, s_conf=1.7589, s_class=0.9995, tst_acc=0.8391, tst_loss=0.3838
+21:40:18:BUS-stop:INFO: Epoch 7, s_conf=1.9136, s_class=0.9938, tst_acc=0.8226, tst_loss=0.4637
+21:40:27:BUS-stop:INFO: Epoch 8, s_conf=1.9994, s_class=0.9977, tst_acc=0.8232, tst_loss=0.5107
+21:40:36:BUS-stop:INFO: Epoch 9, s_conf=2.0496, s_class=0.9995, tst_acc=0.8144, tst_loss=0.579
+21:40:36:BUS-stop:INFO: ***End training***
+21:40:36:BUS-stop:INFO: ***Load the model and Evaluate on test data***
+21:40:36:BUS-stop:INFO: BUS-stop's stop_epoch = 6
+21:40:41:BUS-stop:INFO: Final tst_acc : 0.8391, tst_loss : 0.3838 
