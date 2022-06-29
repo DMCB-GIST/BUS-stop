@@ -8,8 +8,13 @@ Now, we are trying to implement py-torch version, which may be uploaded in July.
 The code and description will be continuously updated.
 
 ````
-#You need to download pre-trained parameters. 
-#Refer to the below code.
+# For the tensorflow version, 
+# Refer to [https://github.com/google-research/bert](https://github.com/google-research/bert) to download the pretrained parameters
+
+# For the keras version,
+# You can download pre-trained parameters as below.
+# The file name must be "pytorch_model.bin".
+
 import requests
 URL = "https://cdn.huggingface.co/bert-base-uncased-pytorch_model.bin"
 response = requests.get(URL)
