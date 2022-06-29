@@ -8,12 +8,10 @@ Now, we are trying to implement py-torch version, which may be uploaded in July.
 The code and description will be continuously updated.
 
 ````
-```
 #You need to download pre-trained parameters. 
-#See the below codes
+#Refer to the below code.
 import requests
 URL = "https://cdn.huggingface.co/bert-base-uncased-pytorch_model.bin"
 response = requests.get(URL)
 open("./params/bert_base/pytorch_model.bin","wb").write(response.content)
-```
 ````
