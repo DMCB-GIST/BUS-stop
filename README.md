@@ -9,7 +9,7 @@ The code and description will be continuously updated.
 
 ````
 # For the tensorflow version, 
-# Refer to [https://github.com/google-research/bert](https://github.com/google-research/bert) to download the pretrained parameters
+# Refer to "https://github.com/google-research/bert" to download the pretrained parameters
 
 # For the keras version,
 # You can download pre-trained parameters as below.
