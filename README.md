@@ -3,7 +3,7 @@ This code for 'Early Stopping Based on Unlabeled Samples in Text Classification'
 You can refer to [https://aclanthology.org/2022.acl-long.52/](https://aclanthology.org/2022.acl-long.52/).
 
 "bus-stop-tensorflow" is a version for detailed analysis, so it is somewhat complicated.  
-We recommend to use "bus-stop-keras", which is a easier version implemented with keras library.  
+We recommend to use "bus-stop-keras", which is a easier version implemented with keras (tensorflow) library.  
 Jupyter example 'run-cell-by-cell.ipynb' in "bus-stop-keras" could help quick understanding about overall algorithm.  
 Now, we are trying to implement pytorch version, which may be uploaded in July or August.  
 The code and description will be continuously updated.  
@@ -23,6 +23,7 @@ response = requests.get(URL)
 open("./params/bert_base/pytorch_model.bin","wb").write(response.content)
 ````
 
+# Keras-version ReadMe
 We used Anaconda, and follows the below commands to implement the virtual enviroment.
 ````
 conda create --name env_name python=3.6
