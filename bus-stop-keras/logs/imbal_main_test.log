@@ -1,0 +1,5 @@
+10:12:12:BUS-stop-test:INFO: ./data/SST-2/imbal/0 -> tst_acc : 0.878, tst_loss : 0.3941
+10:27:39:BUS-stop-test:INFO: ./data/SST-2/imbal/1 -> tst_acc : 0.885, tst_loss : 0.293
+10:44:28:BUS-stop-test:INFO: ./data/SST-2/imbal/2 -> tst_acc : 0.87, tst_loss : 0.3421
+11:01:33:BUS-stop-test:INFO: ./data/SST-2/imbal/3 -> tst_acc : 0.882, tst_loss : 0.4275
+11:17:57:BUS-stop-test:INFO: ./data/SST-2/imbal/4 -> tst_acc : 0.813, tst_loss : 0.6546
