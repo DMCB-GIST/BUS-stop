@@ -1,27 +1,4 @@
-# BUS-stop
-This code for 'Early Stopping Based on Unlabeled Samples in Text Classification', which is accepted in ACL 2022 main conference.  
-You can refer to [https://aclanthology.org/2022.acl-long.52/](https://aclanthology.org/2022.acl-long.52/).
-
-"bus-stop-tensorflow" is a version for detailed analysis, so it is somewhat complicated.  
-We recommend to use "bus-stop-keras", which is a easier version implemented with keras library.  
-Jupyter example 'run-cell-by-cell.ipynb' in "bus-stop-keras" could help quick understanding about overall algorithm.  
-Now, we are trying to implement pytorch version, which may be uploaded in July or August.  
-The code and description will be continuously updated.  
-
-First, you need to download pre-trained parameters. 
-````
-# For the tensorflow version, 
-# Refer to "https://github.com/google-research/bert" to download the pretrained parameters
-
-# For the keras version,
-# You can download pre-trained parameters as below.
-# The file name must be "pytorch_model.bin".
-
-import requests
-URL = "https://cdn.huggingface.co/bert-base-uncased-pytorch_model.bin"
-response = requests.get(URL)
-open("./params/bert_base/pytorch_model.bin","wb").write(response.content)
-````
+# Keras-version
 
 We used Anaconda, and follows the below commands to implement the virtual enviroment.
 ````
