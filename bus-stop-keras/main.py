@@ -17,7 +17,7 @@ import preprocessing as pp
 from collections import deque
 from pt_modeler import ConstructPtModeler
 from huggingface_utils import MODELS
-from tensorflow.keras.activations import softmax
+from scipy.special import softmax
 from sklearn.utils import shuffle
 from sklearn.metrics import log_loss, f1_score, accuracy_score
 from scipy.spatial.distance import cosine,euclidean
@@ -29,7 +29,7 @@ logger.setLevel(logging.DEBUG)
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser()
 	parser.add_argument("--task", required=True)
-	parser.add_argument("--data_path", default=None)
+	parser.add_argument("--data_path", default="")
 	parser.add_argument("--seed", type=int, default=0, help="Random seed for data shuffling")
 	parser.add_argument("--pt_model", default="TFBertModel", help="Pre-trained model")
 	parser.add_argument("--pt_model_checkpoint", default="./params/bert_base/", help="Model checkpoint to load pre-trained weights")
@@ -181,7 +181,7 @@ if __name__ == '__main__':
 	p_l_ = list(np.around(p_l_conf,4))
 	logger.info("p_l_conf = [{},{},{},...,{},{},{}]".format(p_l_[0],p_l_[1],p_l_[2],p_l_[-3],p_l_[-2],p_l_[-1]))
 	logger.info("class distribution of unlabeled data: pred {} -> cali {}".format(
-		np.around(np.mean(preliminary_records['ulb_dist'],0),4), np.around(c_u_cali,4) ))
+		np.around(np.mean(preliminary_records['unl_dist'],0),4), np.around(c_u_cali,4) ))
 
 	logger.info("****************")
 	logger.info("***Main stage***")
@@ -210,7 +210,7 @@ if __name__ == '__main__':
 		trn_loss,trn_acc = model.evaluate(X_lab, y_lab)
 		tst_loss,tst_acc = model.evaluate(X_tst, y_tst) # 
 		
-		unl_probs = softmax(model(X_unl)).numpy()
+		unl_probs = softmax(model.predict(X_unl),axis=1)
 		unl_confs = unl_probs.max(1)
 		unl_dist = unl_probs.mean(0)
 		
