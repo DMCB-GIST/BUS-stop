@@ -8,7 +8,7 @@ import logging
 import tensorflow as tf
 from preprocessing import evenly_shuffle, select_by_index
 
-from tensorflow.keras.activations import softmax
+from scipy.special import softmax
 from sklearn.utils import shuffle
 from sklearn.metrics import log_loss, f1_score, accuracy_score
 
@@ -53,7 +53,7 @@ def run_stage(strategy, modeler, processor, lab_examples, X_unl, rand_seed=0,
 	preliminary_records = {'val_acc':[], 
 					    'val_f1':[],
 						'val_dist':[], # class distribution predicted on the validation set
-						'ulb_dist':[], # class distribution predicted on the unlabeled set
+						'unl_dist':[], # class distribution predicted on the unlabeled set
 						'lab_dist':[], # class distribution of the labeled set
 						'sample_confs':None} # the prediction confidences for each sample in labeled data
 	preliminary_records['lab_dist'] = np.mean(np.eye(np.max(y_lab)+1)[y_lab],0)
@@ -91,12 +91,12 @@ def run_stage(strategy, modeler, processor, lab_examples, X_unl, rand_seed=0,
 				
 		model.set_weights(best_weights)
 		
-		val_probs = softmax(model(X_val)).numpy()
+		val_probs = softmax(model.predict(X_val),axis=1)
 		val_acc = accuracy_score(y_val, val_probs.argmax(1))
 		val_f1 = f1_score(y_val, val_probs.argmax(1),average='macro',zero_division=1)
 		val_loss = log_loss(y_val, val_probs)
 		val_confs = val_probs.max(1)
-		unl_probs = softmax(model(X_unl)).numpy()
+		unl_probs = softmax(model.predict(X_unl),axis=1)
 		
 		for v_i,v_conf in zip(val_indices,val_confs):
 			sample_conf_mat[t,v_i] = v_conf
@@ -104,7 +104,7 @@ def run_stage(strategy, modeler, processor, lab_examples, X_unl, rand_seed=0,
 		preliminary_records['val_acc'].append(val_acc)
 		preliminary_records['val_f1'].append(val_f1)
 		preliminary_records['val_dist'].append(val_probs.mean(0))
-		preliminary_records['ulb_dist'].append(unl_probs.mean(0))
+		preliminary_records['unl_dist'].append(unl_probs.mean(0))
 		
 		logger.info("In {}-th run, [best_val_acc,best_val_loss] = [{},{}].".format(t,round(val_acc,4),round(val_loss,4)))
 		
@@ -116,7 +116,7 @@ def obtain_outputs(preliminary_records, cali_acc_or_f1='f1', bias_lab_or_val='va
 	
 	cali_dists = []
 	for t in range(T):
-		ulb_dist = preliminary_records['ulb_dist'][t]
+		unl_dist = preliminary_records['unl_dist'][t]
 		
 		if cali_acc_or_f1=='acc':
 			val_perf = preliminary_records['val_acc'][t]
@@ -128,7 +128,7 @@ def obtain_outputs(preliminary_records, cali_acc_or_f1='f1', bias_lab_or_val='va
 		else:
 			smp_bias = preliminary_records['val_dist'][t]
 		
-		cali_dists.append(class_calibration(ulb_dist, smp_bias, val_perf))
+		cali_dists.append(class_calibration(unl_dist, smp_bias, val_perf))
 	
 	p_l_conf = np.sort(preliminary_records['sample_confs']) # the confidences of labeled data
 	c_u_cali = np.mean(cali_dists,0) # the output class distribution of unlabeled data
