@@ -85,3 +85,5 @@ If you want to use mult-gpu (0 and 1) and experiment with the imbalanced classif
 ````
 for t in {0..4}; do CUDA_VISIBLE_DEVICES=0,1 python main.py --task SST-2 --data_path imbal/$t --seed $t --log_prefix imbal_ --word_freeze True; done
 ````
+
+※ Experimental results can be found in 'logs' folder.
