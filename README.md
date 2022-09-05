@@ -37,7 +37,7 @@ BUS-stop shows better performance peculiarly in imbalanced and low resource sett
 
 * **Examples**  
 
-![fig5](https://github.com/DMCB-GIST/BUS-stop/ppts/fig5.png)  
+![fig5](https://github.com/DMCB-GIST/BUS-stop/blob/main/ppts/fig5.png)  
 BUS-stop is a combination of conf-sim and class-sim. The red vertical line denotes the best model selected by the BUS-stop.  
 The loss and conf-sim were scaled between 0.25-0.75 for easy comparison.  
 The BUS-stop enables fine-stopping, which skillfully avoids the points where the performance is decreased by fluctuations.
