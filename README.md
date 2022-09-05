@@ -43,7 +43,8 @@ The loss and conf-sim were scaled between 0.25-0.75 for easy comparison.
 The BUS-stop enables fine-stopping, which skillfully avoids the points where the performance is decreased by fluctuations.
 
 # How to run <sub><sup>(for Keras version)</sup></sub>
-First, you need to download pre-trained parameters. 
+First, you need to download pre-trained parameters (See 'download_params.py' in "bus-stop-keras").  
+Below is an example code for BERT-base.  
 ````
 # For the tensorflow version, 
 # Refer to "https://github.com/google-research/bert" to download the pretrained parameters
