@@ -1,5 +1,21 @@
 # Keras-version
 
+First, you need to download pre-trained parameters (See 'download_params.py').  
+Below is an example code for BERT-base.  
+````
+# For the tensorflow version, 
+# Refer to "https://github.com/google-research/bert" to download the pretrained parameters
+
+# For the keras version,
+# You can download pre-trained parameters as below.
+# The file name must be "pytorch_model.bin".
+
+import requests
+URL = "https://cdn.huggingface.co/bert-base-uncased-pytorch_model.bin"
+response = requests.get(URL)
+open("./params/bert_base/pytorch_model.bin","wb").write(response.content)
+````
+
 We used Anaconda, and follows the below commands to implement the virtual enviroment.
 ````
 conda create --name env_name python=3.6
@@ -26,3 +42,5 @@ If you want to use mult-gpu (0 and 1) and experiment with the imbalanced classif
 ````
 for t in {0..4}; do CUDA_VISIBLE_DEVICES=0,1 python main.py --task SST-2 --data_path imbal/$t --seed $t --log_prefix imbal_ --word_freeze True; done
 ````
+
+※ Experimental results can be found in 'logs' folder.
