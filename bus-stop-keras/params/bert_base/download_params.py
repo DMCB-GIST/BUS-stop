@@ -7,4 +7,4 @@ import requests
 
 URL = "https://cdn.huggingface.co/bert-base-uncased-pytorch_model.bin"
 response = requests.get(URL)
-open("./params/bert_base/pytorch_model.bin","wb").write(response.content)
+open("./pytorch_model.bin","wb").write(response.content)
